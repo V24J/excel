@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366; /* Change to your preferred color */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust logo size */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-content {
+    display: none; /* Initially hide dropdown */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.hero {
+    text-align: center;
+    position: relative;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+}
+
+.slide {
+    display: none; /* Hide all slides by default */
+    width: 100%; /* Full width */
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active {
+    background-color : #717171; /* Active dot color */
+}
+
+.hero-background {
+    background-color: #add8e6; /* Light blue color */
+    padding: 20px; /* Add some padding around the content */
+    display: inline-block; /* Make the background fit the content */
+    border-radius: 50px 50px 0 0; /* Curved cuts on the top */
+    /* Add a separate class for bottom curve if needed */
+    position: relative; /* To position pseudo-elements */
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Adjust this value to control the depth of the curve */
+    left: 0;
+    right: 0;
+    height: 40px; /* Height of the curve */
+    background-color: #add8e6; /* Same color as the background */
+    border-radius: 0 0 50px 50px; /* Curved cuts on the bottom */
+}
+
+.vision {
+    padding: 20px;
+    background-color: #f0f0f0; /* Light background for contrast */
+    margin: 20px 0; /* Space above and below the section */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.vision h2 {
+    color: #003366; /* Match the header color */
+}
+
+.vision p {
+    color: #333; /* Darker text for readability */
+}
+
+.hero img {
+    width: 50%; /* Set hero image to half the size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.hero h1 {
+    margin-top: 20px; /* Space between image and heading */
+    color: #003366; /* Optional: change heading color */
+}
+
+.content {
+    padding: 20px;
+}
+
+footer {
+    background-color: #003366; /* Change to your preferred color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
