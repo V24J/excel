@@ -1,9 +1,11 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* Header Styles */
 header {
     background-color: #003366; /* Change to your preferred color */
     color: white;
@@ -34,8 +36,8 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li:hover .dropdown-content {
-    display: block; /* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-content {
@@ -58,48 +60,19 @@ nav ul li:hover .dropdown-content {
     background-color: #f1f1f1;
 }
 
+/* Hero Section Styles */
 .hero {
     text-align: center;
     position: relative;
 }
 
-.slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: auto; /* Adjust height as needed */
-}
-
-.slide {
-    display: none; /* Hide all slides by default */
-    width: 100%; /* Full width */
-}
-
-.dots {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.active {
-    background-color : #717171; /* Active dot color */
-}
-
 .hero-background {
     background-color: #add8e6; /* Light blue color */
     padding: 20px; /* Add some padding around the content */
-    display: inline-block; /* Make the background fit the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
     border-radius: 50px 50px 0 0; /* Curved cuts on the top */
-    /* Add a separate class for bottom curve if needed */
     position: relative; /* To position pseudo-elements */
 }
 
@@ -114,6 +87,50 @@ nav ul li:hover .dropdown-content {
     border-radius: 0 0 50px 50px; /* Curved cuts on the bottom */
 }
 
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 80%; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    align-items: center; /* Center images vertically */
+    justify-content: center; /* Center images horizontally */
+}
+
+.slide {
+    display: none; /* Hide all slides by default */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Ensure images cover the area */
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+    z-index: 3; /* Ensure dots are above images */
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #717171; /* Active dot color */
+}
+
+.hero-background h1 {
+    margin-top: 20px; /* Space between dots and heading */
+    color: #003366; /* Optional: change heading color */
+    text-align: center;
+}
+
+/* Vision Section Styles */
 .vision {
     padding: 20px;
     background-color: #f0f0f0; /* Light background for contrast */
@@ -129,23 +146,74 @@ nav ul li:hover .dropdown-content {
     color: #333; /* Darker text for readability */
 }
 
-.hero img {
-    width: 50%; /* Set hero image to half the size */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.hero h1 {
-    margin-top: 20px; /* Space between image and heading */
-    color: #003366; /* Optional: change heading color */
-}
-
+/* Content Section Styles */
 .content {
     padding: 20px;
 }
 
+/* Undergraduate Programs Page Styles */
+.program-details {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.program-details h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.program-details h2 {
+    font-size:  1.8em;
+    margin-top: 20px;
+}
+
+.program-details p, .program-details ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Footer Styles */
 footer {
     background-color: #003366; /* Change to your preferred color */
     color: white;
     text-align: center;
     padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* YouTube Icon Styling */
+.youtube-icon {
+    position: fixed; /* Fixes the icon in place */
+    right: 20px; /* Distance from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for the height of the icon */
+    z-index:  1000; /* Ensure it appears above other elements */
+}
+
+.youtube-icon img {
+    width: 50px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack menu items on smaller screens */
+    }
+
+    .slider {
+        height: 200px; /* Adjust slider height for smaller screens */
+    }
+
+    .program-details h1 {
+        font-size: 2em; /* Smaller heading on mobile */
+    }
+
+    .program-details h2 {
+        font-size: 1.5em; /* Smaller subheading on mobile */
+    }
 }
